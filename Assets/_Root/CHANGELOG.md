@@ -1,5 +1,13 @@
 # Changelog for com.google.play.appupdate
 
+## [1.8.0] - 2022-07-06
+### New Features
+- Migrated to [Play In-App Reviews 2.0.0](https://developer.android.com/reference/com/google/android/play/core/release-notes-in_app_reviews#2-0-0).
+
+## [1.7.0] - 2022-02-15
+### New Features
+- Incremented version number to match other packages
+
 ## [1.6.1] - 2022-01-24
 ### New Features
  - Incremented version number to match other packages
