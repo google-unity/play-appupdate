@@ -45,7 +45,7 @@ namespace Google.Play.AppUpdate.Internal
         /// A wrapped Play Core task, which will return an AndroidJavaObject representing an AppUpdateInfo.
         /// The caller is responsible for disposing this task.
         /// </returns>
-        public PlayServicesTask<AndroidJavaObject> GetAppUpdateInfo()
+        public PlayCoreTask<AndroidJavaObject> GetAppUpdateInfo()
         {
             return _appUpdateManagerPlayCore.GetAppUpdateInfo();
         }

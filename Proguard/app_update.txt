@@ -1,10 +1,9 @@
 # Copyright 2018 Google LLC
 #
-# The Google Play Core Library is licensed to you under the Play Core Software
-# Development Kit Terms of Service
-# (https://developer.android.com/guide/playcore/license.html).
-# By using the Google Play Core Library, you agree to the Play Core Software
-# Development Kit Terms of Service.
+# The Play Core Library is licensed to you under the Android Software
+# Development Kit License Agreement -
+# https://developer.android.com/studio/terms ("Agreement"). By using the Play
+# Core Library, you agree to the terms of this Agreement.
 
 # Play Core Proguard Rules: Play In-app Update
 
@@ -25,9 +24,9 @@
     public abstract void registerListener(com.google.android.play.core.install.InstallStateUpdatedListener);
     public abstract void unregisterListener(com.google.android.play.core.install.InstallStateUpdatedListener);
 
-    public abstract com.google.android.gms.tasks.Task completeUpdate();
-    public abstract com.google.android.gms.tasks.Task getAppUpdateInfo();
-    public com.google.android.gms.tasks.Task startUpdateFlow(com.google.android.play.core.appupdate.AppUpdateInfo, android.app.Activity, com.google.android.play.core.appupdate.AppUpdateOptions);
+    public abstract com.google.android.play.core.tasks.Task completeUpdate();
+    public abstract com.google.android.play.core.tasks.Task getAppUpdateInfo();
+    public com.google.android.play.core.tasks.Task startUpdateFlow(com.google.android.play.core.appupdate.AppUpdateInfo, android.app.Activity, com.google.android.play.core.appupdate.AppUpdateOptions);
     public boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo, int, android.app.Activity, int);
     public boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo, int, com.google.android.play.core.common.IntentSenderForResultStarter, int);
     public boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo, android.app.Activity, com.google.android.play.core.appupdate.AppUpdateOptions, int);
@@ -59,13 +58,12 @@
     public void registerListener(com.google.android.play.core.install.InstallStateUpdatedListener);
     public void unregisterListener(com.google.android.play.core.install.InstallStateUpdatedListener);
 
-    public com.google.android.gms.tasks.Task completeUpdate();
-    public com.google.android.gms.tasks.Task getAppUpdateInfo();
+    public com.google.android.play.core.tasks.Task completeUpdate();
+    public com.google.android.play.core.tasks.Task getAppUpdateInfo();
     public boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo, int, android.app.Activity, int);
     public boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo, int, com.google.android.play.core.common.IntentSenderForResultStarter, int);
 
     public void setUpdateAvailable(int);
-    public void setUpdateAvailable(int, int);
     public void setUpdateNotAvailable();
     public void setInstallErrorCode(int);
 

@@ -67,17 +67,17 @@ namespace Google.Play.AppUpdate.Internal
         }
 
         /// <summary>
-        /// Returns a <see cref=" PlayServicesTask{TAndroidJava}"/> which returns an AppUpdateInfo
+        /// Returns a <see cref="PlayCoreTask{TAndroidJava}"/> which returns an AppUpdateInfo
         /// AndroidJavaObject on the registered on success callback.
         /// </summary>
         /// <returns>
         /// A wrapped Play Core task, which will return a AndroidJavaObject representing an
         /// AppUpdateInfo. The caller is responsible for disposing this task.
         /// </returns>
-        public PlayServicesTask<AndroidJavaObject> GetAppUpdateInfo()
+        public PlayCoreTask<AndroidJavaObject> GetAppUpdateInfo()
         {
             var javaTask = _javaAppUpdateManager.Call<AndroidJavaObject>("getAppUpdateInfo");
-            return new PlayServicesTask<AndroidJavaObject>(javaTask);
+            return new PlayCoreTask<AndroidJavaObject>(javaTask);
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Google.Play.AppUpdate.Internal
         /// <param name="appUpdateInfo">The on success result of <see cref="GetAppUpdateInfo"/>.</param>
         /// <param name="appUpdateOptions"><see cref="AppUpdateOptions"/> contains update type options.</param>
         /// <returns>
-        /// A <see cref=" PlayServicesTask<int>"/> which gives an int result
+        /// A <see cref="PlayCoreTask<int>"/> which gives an int result
         /// once the dialog has been accepted, denied or closed.
         /// A successful task result contains one of the following values:
         /// <ul>
@@ -96,13 +96,13 @@ namespace Google.Play.AppUpdate.Internal
         ///   <li><see cref="ActivityResult.ResultFailed"/> 1 if the activity created to achieve has failed.</li>
         /// </ul>
         /// </returns>
-        public PlayServicesTask<int> StartUpdateFlow(AppUpdateInfo appUpdateInfo, AppUpdateOptions appUpdateOptions)
+        public PlayCoreTask<int> StartUpdateFlow(AppUpdateInfo appUpdateInfo, AppUpdateOptions appUpdateOptions)
         {
             var javaTask =
                 _javaAppUpdateManager.Call<AndroidJavaObject>("startUpdateFlow",
                     appUpdateInfo.GetJavaUpdateInfo(), UnityPlayerHelper.GetCurrentActivity(),
                     appUpdateOptions.GetJavaAppUpdateOptions());
-            return new PlayServicesTask<int>(javaTask);
+            return new PlayCoreTask<int>(javaTask);
         }
 
         /// <summary>
@@ -111,10 +111,10 @@ namespace Google.Play.AppUpdate.Internal
         /// <returns>
         /// A wrapped Play Core task, which will return an AndroidJavaObject of void result.
         /// </returns>
-        public PlayServicesTask<VoidResult> CompleteUpdate()
+        public PlayCoreTask<VoidResult> CompleteUpdate()
         {
             var javaTask = _javaAppUpdateManager.Call<AndroidJavaObject>("completeUpdate");
-            return new PlayServicesTask<VoidResult>(javaTask);
+            return new PlayCoreTask<VoidResult>(javaTask);
         }
 
         public void Dispose()
