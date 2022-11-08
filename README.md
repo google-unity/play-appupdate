@@ -3,13 +3,13 @@
 ### Install by add directly in `manifest.json` in folder `Packages/manifest.json`
 
 
-+ for version `1.6.0`
+for version `1.7.0`
 ```csharp
-"com.google.play.appupdate": "https://github.com/google-unity/play-appupdate.git?path=Assets/_Root#1.6.0",
+"com.google.play.appupdate": "https://github.com/google-unity/play-appupdate.git#1.6.0",
 ```
 
 
-- dependency `google.play.core 1.6.0`, `google.play.common 1.6.0`, `google.android.appbundle 1.6.0`, `external-dependency-manager 1.2.166`
+dependency `google.play.core 1.6.0`, `google.play.common 1.6.0`, `google.android.appbundle 1.6.0`, `external-dependency-manager 1.2.166`
 ```csharp
 "com.google.android.appbundle": "https://github.com/google-unity/android-app-bundle.git#1.6.0",
 "com.google.play.core": "https://github.com/google-unity/google-play-core.git#1.6.0",
